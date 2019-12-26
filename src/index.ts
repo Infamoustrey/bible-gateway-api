@@ -5,7 +5,7 @@ interface BibleGatewayResult {
   content: Array<string>;
 }
 
-export class BibleGatewayAPI {
+class BibleGatewayAPI {
   private parse: Function = null;
 
   constructor() {
@@ -49,3 +49,6 @@ export class BibleGatewayAPI {
     return Promise.resolve({ verse, content });
   }
 }
+
+export { BibleGatewayAPI };
+export default BibleGatewayAPI;

@@ -46,3 +46,4 @@ class BibleGatewayAPI {
     }
 }
 exports.BibleGatewayAPI = BibleGatewayAPI;
+exports.default = BibleGatewayAPI;
