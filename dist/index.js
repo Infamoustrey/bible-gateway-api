@@ -14,18 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 class BibleGatewayAPI {
-    constructor() {
-        this.parse = null;
-        if (typeof DOMParser !== "undefined") {
-            this.parse = (content) => new DOMParser().parseFromString(content, "text/html");
-        }
-        else {
-            this.parse = (content) => {
-                const { JSDOM } = require("jsdom");
-                const { document } = new JSDOM(content).window;
-                return document;
-            };
-        }
+    constructor() { }
+    parse(content) {
+        return new DOMParser().parseFromString(content, "text/html");
     }
     search(query = "John 3:16", version = "ESV") {
         return __awaiter(this, void 0, void 0, function* () {
