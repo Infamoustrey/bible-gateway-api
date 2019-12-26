@@ -14,7 +14,7 @@ const jsdom_1 = require("jsdom");
 class BibleGatewayAPI {
     constructor() {
         this.parse = null;
-        if (DOMParser) {
+        if (typeof DOMParser !== "undefined") {
             this.parse = (content) => new DOMParser().parseFromString(content, "text/html");
         }
         else {

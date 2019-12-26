@@ -10,7 +10,7 @@ export class BibleGatewayAPI {
   private parse: Function = null;
 
   constructor() {
-    if (DOMParser) {
+    if (typeof DOMParser !== "undefined") {
       this.parse = (content: string) =>
         new DOMParser().parseFromString(content, "text/html");
     } else {
