@@ -37,6 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var axios_1 = require("axios");
+var jsdom_1 = require("jsdom");
 var isBrowser = typeof DOMParser !== "undefined";
 var BibleGatewayAPI = (function () {
     function BibleGatewayAPI() {
@@ -48,8 +49,7 @@ var BibleGatewayAPI = (function () {
         }
         else {
             this.parse = function (content) {
-                var JSDOM = require("jsdom").JSDOM;
-                var document = new JSDOM(content).window.document;
+                var document = new jsdom_1.JSDOM(content).window.document;
                 return document;
             };
         }

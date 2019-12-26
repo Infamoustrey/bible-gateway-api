@@ -340,6 +340,15 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/jsdom@^12.2.4":
+  version "12.2.4"
+  resolved "http://git.local.tvi-mp3.com:4873/@types%2fjsdom/-/jsdom-12.2.4.tgz#845cd4d43f95b8406d9b724ec30c03edadcd9528"
+  integrity sha512-q+De3S/Ri6U9uPx89YA1XuC+QIBgndIfvBaaJG0pRT8Oqa75k4Mr7G9CRZjIvlbLGIukO/31DFGFJYlQBmXf/A==
+  dependencies:
+    "@types/node" "*"
+    "@types/tough-cookie" "*"
+    parse5 "^4.0.0"
+
 "@types/minimatch@*":
   version "3.0.3"
   resolved "http://git.local.tvi-mp3.com:4873/@types%2fminimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
@@ -349,6 +358,11 @@
   version "13.1.0"
   resolved "http://git:4873/@types%2fnode/-/node-13.1.0.tgz#225cbaac5fdb2b9ac651b02c070d8aa3c37cc812"
   integrity sha512-zwrxviZS08kRX40nqBrmERElF2vpw4IUTd5khkhBTfFH8AOaeoLVx48EC4+ZzS2/Iga7NevncqnsUSYjM4OWYA==
+
+"@types/tough-cookie@*":
+  version "2.3.6"
+  resolved "http://git.local.tvi-mp3.com:4873/@types%2ftough-cookie/-/tough-cookie-2.3.6.tgz#c880579e087d7a0db13777ff8af689f4ffc7b0d5"
+  integrity sha512-wHNBMnkoEBiRAd3s8KTKwIuO9biFtTf0LehITzBhSco+HQI0xkXZbLOD55SW3Aqw3oUkHstkm5SPv58yaAdFPQ==
 
 abab@^2.0.0:
   version "2.0.3"
@@ -2483,6 +2497,11 @@ parse5@5.1.0:
   version "5.1.0"
   resolved "http://git:4873/parse5/-/parse5-5.1.0.tgz#c59341c9723f414c452975564c7c00a68d58acd2"
   integrity sha512-fxNG2sQjHvlVAYmzBZS9YlDp6PTSSDwa98vkD4QgVDDCAo84z5X1t5XyJQ62ImdLXx5NdIIfihey6xpum9/gRQ==
+
+parse5@^4.0.0:
+  version "4.0.0"
+  resolved "http://git.local.tvi-mp3.com:4873/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
+  integrity sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==
 
 path-exists@^3.0.0:
   version "3.0.0"
