@@ -8,15 +8,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = __importDefault(require("axios"));
+const axios_1 = require("axios");
 class BibleGatewayAPI {
-    constructor() { }
-    parse(content) {
-        return new DOMParser().parseFromString(content, "text/html");
+    constructor() {
+        this.parse = null;
+        if (typeof DOMParser !== "undefined") {
+            this.parse = (content) => new DOMParser().parseFromString(content, "text/html");
+        }
+        else {
+            this.parse = (content) => {
+                const { JSDOM } = require("jsdom");
+                const { document } = new JSDOM(content).window;
+                return document;
+            };
+        }
     }
     search(query = "John 3:16", version = "ESV") {
         return __awaiter(this, void 0, void 0, function* () {
@@ -40,4 +46,3 @@ class BibleGatewayAPI {
     }
 }
 exports.BibleGatewayAPI = BibleGatewayAPI;
-//# sourceMappingURL=index.js.map

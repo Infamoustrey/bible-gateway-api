@@ -6,10 +6,19 @@ interface BibleGatewayResult {
 }
 
 export class BibleGatewayAPI {
-  constructor() {}
+  private parse: Function = null;
 
-  private parse(content: string) {
-    return new DOMParser().parseFromString(content, "text/html");
+  constructor() {
+    if (typeof DOMParser !== "undefined") {
+      this.parse = (content: string) =>
+        new DOMParser().parseFromString(content, "text/html");
+    } else {
+      this.parse = (content: string) => {
+        const { JSDOM } = require("jsdom");
+        const { document } = new JSDOM(content).window;
+        return document;
+      };
+    }
   }
 
   async search(
