@@ -37,13 +37,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var axios_1 = require("axios");
-var isNode = typeof process !== "undefined" &&
-    process.versions != null &&
-    process.versions.node != null;
+var isBrowser = typeof DOMParser !== "undefined";
 var BibleGatewayAPI = (function () {
     function BibleGatewayAPI() {
         this.parse = null;
-        if (!isNode) {
+        if (isBrowser) {
             this.parse = function (content) {
                 return new DOMParser().parseFromString(content, "text/html");
             };
