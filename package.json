@@ -4,7 +4,9 @@
   "description": "A Promise Based API for restful interaction with Bible Gateway",
   "main": "dist/index.js",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "test": "echo 'not implemented'"
+  },
   "dependencies": {
     "axios": "^0.19.0"
   },
