@@ -1,5 +1,4 @@
 import axios from "axios";
-import { JSDOM } from "jsdom";
 
 interface BibleGatewayResult {
   verse: string;
@@ -15,6 +14,7 @@ export class BibleGatewayAPI {
         new DOMParser().parseFromString(content, "text/html");
     } else {
       this.parse = (content: string) => {
+        const { JSDOM } = require("jsdom");
         const { document } = new JSDOM(content).window;
         return document;
       };

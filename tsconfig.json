@@ -2,8 +2,11 @@
   "compilerOptions": {
     "target": "es6",
     "module": "commonjs",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "outDir": "dist"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "cypress"]
+  "exclude": ["node_modules"]
 }

@@ -8,9 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const axios_1 = require("axios");
-const jsdom_1 = require("jsdom");
+const axios_1 = __importDefault(require("axios"));
 class BibleGatewayAPI {
     constructor() {
         this.parse = null;
@@ -19,7 +21,8 @@ class BibleGatewayAPI {
         }
         else {
             this.parse = (content) => {
-                const { document } = new jsdom_1.JSDOM(content).window;
+                const { JSDOM } = require("jsdom");
+                const { document } = new JSDOM(content).window;
                 return document;
             };
         }
@@ -46,3 +49,4 @@ class BibleGatewayAPI {
     }
 }
 exports.BibleGatewayAPI = BibleGatewayAPI;
+//# sourceMappingURL=index.js.map
