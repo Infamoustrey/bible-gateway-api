@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const isBrowser = typeof process === "undefined";
+const isNode =
+  typeof process !== "undefined" &&
+  process.versions != null &&
+  process.versions.node != null;
 
 interface BibleGatewayResult {
   verse: string;
@@ -11,7 +14,7 @@ export class BibleGatewayAPI {
   private parse: Function = null;
 
   constructor() {
-    if (isBrowser) {
+    if (!isNode) {
       this.parse = (content: string) =>
         new DOMParser().parseFromString(content, "text/html");
     } else {
