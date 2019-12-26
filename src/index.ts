@@ -1,8 +1,6 @@
 import axios from "axios";
 import { JSDOM } from "jsdom";
 
-const isBrowser = typeof DOMParser !== "undefined";
-
 interface BibleGatewayResult {
   verse: string;
   content: Array<string>;
@@ -12,7 +10,7 @@ export class BibleGatewayAPI {
   private parse: Function = null;
 
   constructor() {
-    if (isBrowser) {
+    if (DOMParser) {
       this.parse = (content: string) =>
         new DOMParser().parseFromString(content, "text/html");
     } else {

@@ -11,11 +11,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const jsdom_1 = require("jsdom");
-const isBrowser = typeof DOMParser !== "undefined";
 class BibleGatewayAPI {
     constructor() {
         this.parse = null;
-        if (isBrowser) {
+        if (DOMParser) {
             this.parse = (content) => new DOMParser().parseFromString(content, "text/html");
         }
         else {
