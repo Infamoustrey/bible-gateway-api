@@ -1,9 +1,17 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
     "target": "es6",
     "module": "commonjs",
-    "outDir": "dist"
+    "outDir": "dist",
+    "declaration": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

@@ -3,12 +3,13 @@
   "version": "1.0.8",
   "description": "A Promise Based API for restful interaction with Bible Gateway",
   "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "license": "MIT",
   "scripts": {
     "test": "ava"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.24.0",
     "jsdom": "^15.2.1"
   },
   "publishConfig": {
@@ -16,8 +17,10 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
-    "@types/node": "^13.1.1",
+    "@types/node": "^17.0.1",
     "ava": "^2.4.0",
-    "typescript": "^3.7.4"
+    "ts-node": "^10.4.0",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.4"
   }
 }
