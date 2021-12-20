@@ -1,3 +1,4 @@
+import { BibleResultType } from "../types/BibleResultTypes";
 import { IBibleGatewayBase } from "../types/IBibleGatewayBase";
 import { ExtendedConstructor } from "../utils/mixin";
 
@@ -6,7 +7,7 @@ export const BibleGatewaySearch = <TBase extends ExtendedConstructor<IBibleGatew
         async search(
             query: string = "John 3:16",
             version: string = "ESV"
-        ) {
+        ): Promise<BibleResultType> {
             let encodedSearch = encodeURIComponent(query);
             let encoodedVersion = encodeURIComponent(version);
 
@@ -16,7 +17,7 @@ export const BibleGatewaySearch = <TBase extends ExtendedConstructor<IBibleGatew
 
             const verse = document.querySelector(".bcv").textContent;
 
-            let elements = [].slice.call(document.querySelectorAll(".text"));
+            let elements = [].slice.call(document.querySelectorAll(".passage-content p > span"));
 
             let content: Array<string> = [];
             for (let i = 0; i < elements.length; i++) {
